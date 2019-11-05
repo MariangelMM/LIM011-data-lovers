@@ -1,0 +1,130 @@
+body{
+    padding:0;
+    margin:0;
+    }
+    .primerfondo{
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: url(./imagenes/fondo1.jpg) no-repeat;
+        background-size: cover;
+        overflow: hidden;;
+     }
+    
+     .segundofondo{
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: url(./imagenes/fondo2.jpg) no-repeat;
+        background-size: cover;
+        overflow-y: scroll;
+        ;
+     }
+    .image-prop{
+        width: 150px;
+        height: 200px;
+        ;
+    }
+    .cont-potter{
+        border: 2px solid #FFF;
+        border: 5px solid #FFF;
+        background-color: #000000;
+        margin: 0 0 20px 0;
+    }
+    .letrasPersonajes{
+        font-family: 'Lucida Bright';
+        font-size: 15px;
+        color: #ffffff;
+        font-weight: bold;
+        font-style: normal;
+        line-height: 2px;
+    }
+     .titulo-home{
+        width: 70%;
+    }
+      
+     button{
+        font-family: 'Lucida Bright';
+        padding: 10px 20px;
+        font-weight: 600;
+        font-size: 22px;
+        color: #000000 ;
+        background-color:  #C4C4C4;
+        border-radius: 50px;
+        border: 3px solid   #000000;
+        width:auto;
+        margin:50 auto;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+      }
+    
+    .letras{
+          font-family: 'Lucida Bright';
+          font-size: 28px;
+          color: #ffffff;
+          -webkit-text-stroke: 0.6px #000000;
+          text-shadow: #fff 0.8px;
+          font-weight: bold;
+          font-style: normal;
+    }
+    
+    .letras-home{
+        font-family: 'Lucida Bright';
+        font-size: 34px;
+        color: #ffffff;
+        -webkit-text-stroke: 0.6px #000000;
+        text-shadow: #fff 0.8px;
+        font-weight: bold;
+        font-style: normal;
+    }
+    .texto_izquierda{
+        font-family: 'Lucida Bright';
+        width: 30%;
+        margin: 10px;
+        padding: 5px;
+        margin-top: 15%;
+        margin-left: 10%;
+    
+      }
+    .ocultar{
+        display: none;
+    }
+    .mostrar{
+        display: block;
+    }
+    .personajes {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+        margin: 20px;
+    }
+    
+    .foto {
+    width: 100px;
+    }
+    
+    /* Mobile */
+    @media only screen and (max-width: 450px) {
+        .titulo-home{
+            width: 100%;
+        }
+        .letras{
+            font-size: 22px;
+        }
+        .texto_izquierda{
+            width: 70%;
+            margin: 10px;
+            margin-top: 20%;
+            margin-left: 10px;
+            margin-bottom: 20%;
+            text-align: left;
+        }
+       
+    }
+    
+    
+    
