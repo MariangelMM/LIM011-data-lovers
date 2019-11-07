@@ -1,6 +1,6 @@
 export const dataPotter = (data) => {
   const dataNueva = [];
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i + 1) {
     dataNueva.push({
       image: data[i].image,
       species: data[i].species,
@@ -18,6 +18,7 @@ export const ordenadorAZ = (data, ordenNombre) => {
     if (aa.name < bb.name) {
       return -1;
     }
+    return arrayNombre;
   });
   if (ordenNombre === 'ordenar-az') {
     return arrayNombre;

@@ -26,7 +26,7 @@ const contenedorPotter = document.getElementById('contenedor-potter');
 
 export const mostrarData = (potter) => { // parámetro
   let muestra = ' ';
-  for (let i = 0; i < potter.length; i++) {
+  for (let i = 0; i < potter.length; i + 1) {
     const llamar = `
     <div name='potter' class='cont-potter' id='${potter[i].id}'>
         <image class= 'image-prop' src ='${potter[i].image}'/>
@@ -39,7 +39,7 @@ export const mostrarData = (potter) => { // parámetro
 };
 contenedorPotter.innerHTML = mostrarData(allPotter);
 
-const ordenar = document.getElementById('ordenar');
+export const ordenar = document.getElementById('ordenar');
 ordenar.addEventListener('change', () => {
   const ordenador = ordenar.value;
   let ordenadorPotter = [];
