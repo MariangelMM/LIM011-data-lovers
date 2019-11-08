@@ -110,4 +110,3 @@ describe('ordenadorAZ', () => {
     expect(ordenadorAZ(potterPrueba, 'ordenar-za')[0].name).toEqual('Vincent Crabbe');
   });
 });
-.....
