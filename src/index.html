@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <title>Data Lovers</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <section id= "primera_vista" class="primerfondo"> 
-      <div id="pantalla_inicio" class="letras-home">
-          <figure><img class="titulo-home" alt="Universo Potter"  src="./imagenes/universo potter transparente.png"></figure>
-         <p>Ingresa tu nombre o nick </p>
-         <p><input type ="text" id="name" value=""></p>
-         <button type="button" id="entrar">Entrar</button>
-      </div>
-    </section>
 
-    <section id="segunda_vista" class="segundofondo ocultar">
-      <div id="pantalla_segunda" class="letras">
-         <p id= "mensaje_bienvenido" class="texto_izquierda" > </p>
-         <button type="button" id="empezar">Empezar</button>
-      </div>
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <title>Data Lovers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <section id= "tercera_vista" class="segundofondo ocultar"> 
-      <div id="pantalla_tercera" class="contenedor_interno">
-        <p class="letras"> A continuación te presentamos los personajes de la Saga Harry Potter  </p>
-        <div id="" class="">
-            <p class=""> Ordenar por: </p>
-            <select id="ordenar" class="opciones centrar-objeto">
-              <option value="ordenar-por">Alfabeto</option>
-              <option value="ordenar-az">Alfabeto: De A-Z</option>
-              <option value="ordenar-za">Alfabeto: De Z-A</option>
-            </select>
-          </div> 
-        <div id="contenedor-potter"  class="personajes letrasPersonajes"></div>
-      </div>
-        
-    </section>
-       
+<body>
+  <section id="primera_vista" class="primerfondo">
+    <div id="pantalla_inicio" class="letras-home">
+      <figure><img class="titulo-home" alt="Universo Potter" src="./imagenes/universo potter transparente.png"></figure>
+      <p>Ingresa tu nombre o nick </p>
+      <p><input type="text" id="name" value=""></p>
+      <button type="button" id="entrar">Entrar</button>
+    </div>
+  </section>
+
+  <section id="segunda_vista" class="segundofondo ocultar">
+    <div id="pantalla_segunda" class="letras">
+      <p id="mensaje_bienvenido" class="texto_izquierda"> </p>
+      <button type="button" id="empezar">Empezar</button>
+    </div>
+  </section>
+
+  <section id="tercera_vista" class="segundofondo ocultar">
+    <div id="pantalla_tercera" class="contenedor_interno">
+      <p class="letras"> A continuación te presentamos los personajes de la Saga Harry Potter </p>
+
+      <select class="seleccion" id="ordenar">
+        <option value="">Alfabeto</option>
+        <option value="ordenar-az">Alfabeto: De A-Z</option>
+        <option value="ordenar-za">Alfabeto: De Z-A</option>
+      </select>
+      <select class="seleccion" id="ordenaraño">
+        <option value="">Año</option>
+        <option value="ordenar-asc">Ascendente</option>
+        <option value="ordenar-desc">Descendente</option>
+      </select>
+      <select class="seleccion" id="casa">
+        <option value="">Casas</option>
+        <option value="Slytherin">Slytherin</option>
+        <option value="Gryffindor">Gryffindor</option>
+        <option value="Ravenclaw">Ravenclaw</option>
+        <option value="Hufflepuff">Hufflepuff</option>
+      </select>
+      <select class="seleccion" id="genero">
+        <option value="">Genero</option>
+        <option value="male">Masculino</option>
+        <option value="female">Femenino</option>
+      </select>
+
+
+      <div id="contenedor-potter" class="personajes letrasPersonajes"></div>
+    </div>
     <script type="module" src="main.js"></script>
-  </body>
+</body>
+
 </html>
- 

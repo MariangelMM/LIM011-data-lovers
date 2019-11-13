@@ -1,5 +1,8 @@
+/* eslint-disable no-restricted-globals */
 import POTTER from './data/potter/potter.js';
-import { dataPotter, ordenadorAZ } from './data.js';
+import {
+  dataPotter, ordenadorAZ, ordenadorAño, flitrarCasa, flitrarGenero,
+} from './data.js';
 
 // Declarando variable para evento
 const entrar = document.getElementById('entrar');
@@ -28,11 +31,28 @@ export const mostrarData = (potter) => { // parámetro
   let muestra = ' ';
   for (let i = 0; i < potter.length; i += 1) {
     const llamar = `
-    <div name='potter' class='cont-potter' id='${potter[i].id}'>
-        <image class= 'image-prop' src ='${potter[i].image}'/>
-        <p class ='nombre-potter'>${potter[i].name}</p>
-        <p class = 'spec-potter'>${potter[i].species}</p>   
-    </div>`;
+    <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img class="img-poke" src= "${potter[i].image}"/>
+              <h2 class="numeroPoke"> ${potter[i].name}</h2>
+              <h2 class="nombre">${potter[i].house}</h2>
+            </div>
+  
+            <div class="flip-card-back">
+                <h2 class="nombre-back">${potter[i].name}</h2>
+                <h4 class="caracteristicas">Casa: ${potter[i].house}</h4>
+                <h4 class="caracteristicas">Genero: ${potter[i].gender}</h4>
+                <h4 class="caracteristicas">Patronus: ${potter[i].patronus}</h4>
+                <h4 class="caracteristicas">Especie: ${potter[i].species}</h4>
+                <h4 class="caracteristicas">Actor: ${potter[i].actor}</h4>
+
+                           
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
     muestra += llamar;
   }
   return muestra;
@@ -51,4 +71,31 @@ ordenar.addEventListener('change', () => {
     contenedorPotter.innerHTML = mostrarData(allPotter);
   }
   contenedorPotter.innerHTML = mostrarData(ordenadorPotter);
+});
+
+export const ordenarAño = document.getElementById('ordenaraño');
+ordenarAño.addEventListener('change', () => {
+  const ordenadorAsc = ordenarAño.value;
+  let ordenadorPotterAño = [];
+  if (ordenadorAsc === 'ordenar-asc') {
+    ordenadorPotterAño = ordenadorAño(allPotter, ordenadorAsc);
+  } else if (ordenadorAsc === 'ordenar-desc') {
+    ordenadorPotterAño = ordenadorAño(allPotter, ordenadorAsc).reverse();
+  } else {
+    contenedorPotter.innerHTML = mostrarData(allPotter);
+  }
+  contenedorPotter.innerHTML = mostrarData(ordenadorPotterAño);
+});
+
+
+export const casa = document.getElementById('casa');
+casa.addEventListener('change', () => {
+  const flitrandoCasa = flitrarCasa(allPotter, casa.value);
+  contenedorPotter.innerHTML = mostrarData(flitrandoCasa);
+});
+
+export const genero = document.getElementById('genero');
+genero.addEventListener('change', () => {
+  const flitrandoGenero = flitrarGenero(allPotter, genero.value);
+  contenedorPotter.innerHTML = mostrarData(flitrandoGenero);
 });
