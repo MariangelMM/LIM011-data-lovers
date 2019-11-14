@@ -1,7 +1,6 @@
-/* eslint-disable no-restricted-globals */
 import POTTER from './data/potter/potter.js';
 import {
-  dataPotter, ordenadorAZ, ordenadorAño, flitrarCasa, flitrarGenero,
+  dataPotter, ordenadorAZ, ordenadorAnio, filtrarCasa, filtrarGenero, filtrarRol, filtrarVaritas,
 } from './data.js';
 
 // Declarando variable para evento
@@ -34,20 +33,19 @@ export const mostrarData = (potter) => { // parámetro
     <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img class="img-poke" src= "${potter[i].image}"/>
-              <h2 class="numeroPoke"> ${potter[i].name}</h2>
-              <h2 class="nombre">${potter[i].house}</h2>
+              <img class="img-potter" src= "${potter[i].image}"/>
+              <h2> ${potter[i].name}</h2>
+              <h2> ${potter[i].house}</h2>
             </div>
   
             <div class="flip-card-back">
-                <h2 class="nombre-back">${potter[i].name}</h2>
+                <h2>${potter[i].name}</h2>
                 <h4 class="caracteristicas">Casa: ${potter[i].house}</h4>
                 <h4 class="caracteristicas">Genero: ${potter[i].gender}</h4>
                 <h4 class="caracteristicas">Patronus: ${potter[i].patronus}</h4>
                 <h4 class="caracteristicas">Especie: ${potter[i].species}</h4>
                 <h4 class="caracteristicas">Actor: ${potter[i].actor}</h4>
-
-                           
+                <img class="escudo" src="./imagenes/hogwarts.png" />        
               </div>
             </div>
           </div>
@@ -65,37 +63,67 @@ ordenar.addEventListener('change', () => {
   let ordenadorPotter = [];
   if (ordenador === 'ordenar-az') {
     ordenadorPotter = ordenadorAZ(allPotter, ordenador);
+    contenedorPotter.innerHTML = mostrarData(ordenadorPotter);
   } else if (ordenador === 'ordenar-za') {
     ordenadorPotter = ordenadorAZ(allPotter, ordenador).reverse();
-  } else {
+    contenedorPotter.innerHTML = mostrarData(ordenadorPotter);
+  } else if (ordenador === 'all') {
     contenedorPotter.innerHTML = mostrarData(allPotter);
   }
-  contenedorPotter.innerHTML = mostrarData(ordenadorPotter);
 });
 
-export const ordenarAño = document.getElementById('ordenaraño');
-ordenarAño.addEventListener('change', () => {
-  const ordenadorAsc = ordenarAño.value;
-  let ordenadorPotterAño = [];
+export const ordenarAnio = document.getElementById('ordenaranio');
+ordenarAnio.addEventListener('change', () => {
+  const ordenadorAsc = ordenarAnio.value;
+  let ordenadorPotterAnio = [];
   if (ordenadorAsc === 'ordenar-asc') {
-    ordenadorPotterAño = ordenadorAño(allPotter, ordenadorAsc);
+    ordenadorPotterAnio = ordenadorAnio(allPotter, ordenadorAsc);
+    contenedorPotter.innerHTML = mostrarData(ordenadorPotterAnio);
   } else if (ordenadorAsc === 'ordenar-desc') {
-    ordenadorPotterAño = ordenadorAño(allPotter, ordenadorAsc).reverse();
-  } else {
+    ordenadorPotterAnio = ordenadorAnio(allPotter, ordenadorAsc).reverse();
+    contenedorPotter.innerHTML = mostrarData(ordenadorPotterAnio);
+  } else if (ordenadorAsc === 'all') {
     contenedorPotter.innerHTML = mostrarData(allPotter);
   }
-  contenedorPotter.innerHTML = mostrarData(ordenadorPotterAño);
 });
 
 
 export const casa = document.getElementById('casa');
 casa.addEventListener('change', () => {
-  const flitrandoCasa = flitrarCasa(allPotter, casa.value);
-  contenedorPotter.innerHTML = mostrarData(flitrandoCasa);
+  if (casa.value === 'all') {
+    contenedorPotter.innerHTML = mostrarData(allPotter);
+  } else {
+    const filtrandoCasa = filtrarCasa(allPotter, casa.value);
+    contenedorPotter.innerHTML = mostrarData(filtrandoCasa);
+  }
 });
 
 export const genero = document.getElementById('genero');
 genero.addEventListener('change', () => {
-  const flitrandoGenero = flitrarGenero(allPotter, genero.value);
-  contenedorPotter.innerHTML = mostrarData(flitrandoGenero);
+  if (genero.value === 'all') {
+    contenedorPotter.innerHTML = mostrarData(allPotter);
+  } else {
+    const filtrandoGenero = filtrarGenero(allPotter, genero.value);
+    contenedorPotter.innerHTML = mostrarData(filtrandoGenero);
+  }
+});
+
+export const rol = document.getElementById('rol');
+rol.addEventListener('change', () => {
+  if (rol.value === 'all') {
+    contenedorPotter.innerHTML = mostrarData(allPotter);
+  } else {
+    const filtrandoRol = filtrarRol(allPotter, rol.value);
+    contenedorPotter.innerHTML = mostrarData(filtrandoRol);
+  }
+});
+
+export const varitas = document.getElementById('varitas');
+varitas.addEventListener('change', () => {
+  if (varitas.value === 'all') {
+    contenedorPotter.innerHTML = mostrarData(allPotter);
+  } else {
+    const filtrandoVaritas = filtrarVaritas(allPotter, varitas.value);
+    contenedorPotter.innerHTML = mostrarData(filtrandoVaritas);
+  }
 });
