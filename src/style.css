@@ -1,184 +1,193 @@
 body{
-    padding:0;
-    margin:0;
-    }
-    .primerfondo{
-        text-align: center;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: url(./imagenes/fondo1.jpg) no-repeat;
-        background-size: cover;
-        overflow: hidden;;
-     }
-    
-     .segundofondo{
-        text-align: center;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: url(./imagenes/fondo2.jpg) no-repeat;
-        background-size: cover;
-        overflow-y: scroll;
-        ;
-     }
+  padding:0;
+  margin:0;
+}
+.primerfondo{
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url(./imagenes/fondo1.jpg) no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
 
-    .letrasPersonajes{
-        font-family: 'Lucida Bright';
-        font-size: 15px;
-        color: #ffffff;
-        font-weight: bold;
-        font-style: normal;
-        line-height: 2px;
-    }
-     .titulo-home{
-        width: 70%;
-    }
-      
-     button{
-        font-family: 'Lucida Bright';
-        padding: 10px 20px;
-        font-weight: 600;
-        font-size: 22px;
-        color: #000000 ;
-        background-color:  #C4C4C4;
-        border-radius: 50px;
-        border: 3px solid   #000000;
-        width:auto;
-        margin:50 auto;
-        box-sizing: border-box;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
-      }
-    
-    .letras{
-          font-family: 'Lucida Bright';
-          font-size: 28px;
-          color: #ffffff;
-          -webkit-text-stroke: 0.6px #000000;
-          text-shadow: #fff 0.8px;
-          font-weight: bold;
-          font-style: normal;
-    }
-    
-    .letras-home{
-        font-family: 'Lucida Bright';
-        font-size: 34px;
-        color: #ffffff;
-        -webkit-text-stroke: 0.6px #000000;
-        text-shadow: #fff 0.8px;
-        font-weight: bold;
-        font-style: normal;
-    }
-    .texto_izquierda{
-        font-family: 'Lucida Bright';
-        width: 30%;
-        margin: 10px;
-        padding: 5px;
-        margin-top: 15%;
-        margin-left: 10%;
-    
-      }
-    .ocultar{
-        display: none;
-    }
-    .mostrar{
-        display: block;
-    }
-    .personajes {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        align-content: flex-start;
-        margin: 20px;
-    }
-    
-    .foto {
-    width: 100px;
-    }
-    
-    .seleccion{
-        border: 3px solid#000;
-        background-color:#fff;
-        color:black;
-        font-size:17px;
-        width:150px;
-        height:35px;
-    }
-    /* Mobile */
-    @media only screen and (max-width: 450px) {
-        .titulo-home{
-            width: 100%;
-        }
-        .letras{
-            font-size: 22px;
-        }
-        .texto_izquierda{
-            width: 70%;
-            margin: 10px;
-            margin-top: 20%;
-            margin-left: 10px;
-            margin-bottom: 20%;
-            text-align: left;
-        }
-       
-    }
-    
-    
-    /*MENU POKE*/
- .flip-card {
-    width: 240px;
-    height: 400px;
-    perspective: 1000px;
-    display: inline-block;
-    align-content: center;
-    justify-content: space-around;
-    cursor: pointer;
-    cursor: pointer; 
-    border: 2px solid #FFF;
-    border: 5px solid #FFF;
-    background-color: #000000;
-    margin: 0 0 20px 0;
-  }
-  .flip-card .flip-card-front .img-poke{
-    width: 180px;
-    height: 250px;
-    ;
+.segundofondo{
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url(./imagenes/fondo2.jpg) no-repeat;
+  background-size: cover;
+  overflow-y: scroll;
+}
+
+.letrasPersonajes{
+  font-family: 'Lucida Bright';
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: bold;
+  font-style: normal;
+}
+.titulo-home{
+  width: 70%;
+}
+
+button{
+  font-family: 'Lucida Bright';
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 22px;
+  color: #000000 ;
+  background-color:  #C4C4C4;
+  border-radius: 50px;
+  border: 3px solid   #000000;
+  width:auto;
+  margin:50 auto;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.letras{
+  font-family: 'Lucida Bright';
+  font-size: 28px;
+  color: #ffffff;
+  -webkit-text-stroke: 0.6px #000000;
+  text-shadow: #fff 0.8px;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.letras-home{
+  font-family: 'Lucida Bright';
+  font-size: 34px;
+  color: #ffffff;
+  -webkit-text-stroke: 0.6px #000000;
+  text-shadow: #fff 0.8px;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.texto_izquierda{
+  font-family: 'Lucida Bright';
+  width: 30%;
+  margin: 10px;
+  padding: 5px;
+  margin-top: 15%;
+  margin-left: 10%;
+}
+
+.ocultar{
+  display: none;
+}
+
+.mostrar{
+  display: block;
+}
+
+.personajes {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+  margin: 20px;
+}
+
+.foto {
+  width: 100px;
+}
+
+.seleccion{
+  border: 3px solid#17141d;
+  background-color: #1e222e;
+  color: #fff;
+  font-size:17px;
+  width:150px;
+  height:35px;
+}
+
+/*MENU POTTER*/
+.flip-card {
+  width: 240px;
+  height: 400px;
+  perspective: 1000px;
+  display: inline-block;
+  align-content: center;
+  justify-content: space-around;
+  cursor: pointer;
+  cursor: pointer; 
+  border: 5px solid #17141d;
+  background-color: #000000;
+  margin: 0 0 20px 0;
+}
+
+.flip-card .flip-card-front .img-potter{
+  width: 180px;
+  height: 250px;
 } 
-  
-  /*Este contenedor es necesario para colocar la parte delantera y trasera. */
-  .flip-card-inner {
-    position: relative;
+
+/*Este contenedor es necesario para colocar la parte delantera y trasera. */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Realice un giro horizontal cuando mueva el mouse sobre el contenedor del contenedor*/
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Posiciona la parte delantera y trasera. */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  align-content: center;
+}
+
+/* Estilo de la parte posterior*/
+.flip-card-back {
+  background-color: #000000;
+  color:  #000000;
+  transform: rotateY(180deg);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: url(./imagenes/mapa.png) no-repeat;
+  background-size: cover;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-text-stroke: 0.6px #4c3a28;
+  text-shadow: #4c3a28 0.8px;
+}
+
+.escudo {
+  width: 55%;
+  margin: 8px auto;
+}
+.caracteristicas {
+  margin: 5px;
+  padding: 0;
+}
+/************* Mobile **************/
+@media only screen and (max-width: 450px) {
+  .titulo-home{
     width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    
   }
- 
-  /* Realice un giro horizontal cuando mueva el mouse sobre el contenedor del contenedor*/
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+  .letras{
+    font-size: 22px;
   }
-  
-  /* Posiciona la parte delantera y trasera. */
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    align-content: center;
+  .texto_izquierda{
+    width: 70%;
+    margin: 10px;
+    margin-top: 20%;
+    margin-left: 10px;
+    margin-bottom: 20%;
+    text-align: left;
   }
-  
-  
-  /* Estilo de la parte posterior*/
-  .flip-card-back {
-    background-color: #000000;
-    color: blanchedalmond;
-    transform: rotateY(180deg);
-    border-radius: 5px;
-    border: 1px solid #000000;
-    cursor: pointer;
-    align-content: center;
-  }
+}
