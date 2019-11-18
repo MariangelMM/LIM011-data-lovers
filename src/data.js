@@ -11,7 +11,7 @@ export const dataPotter = (data) => {
       actor: element.actor,
       hogwartsStaff: element.hogwartsStaff,
       hogwartsStudent: element.hogwartsStudent,
-      yearOfBirth: element.yearOfBirth,
+      yearOfBirth: element.yearOfBirth ? element.yearOfBirth : 'Sin Año',
       wand: element.wand,
     });
   });
@@ -24,12 +24,15 @@ export const ordenadorAZ = (data) => {
   return arrayNombre;
 };
 
-export const ordenadorAnio = (data) => {
-  const arraAnio = data.slice().sort((bb, aa) => (
-    aa.yearOfBirth > bb.yearOfBirth ? 1 : -1));
+export const ordenadorAnioAsc = (data) => {
+  const arraAnio = data.slice().sort((aa, bb) => (bb.yearOfBirth - aa.yearOfBirth));
   return arraAnio;
 };
 
+export const ordenadorAnioDesc = (data) => {
+  const arraAnio = data.slice().sort((aa, bb) => (aa.yearOfBirth - bb.yearOfBirth));
+  return arraAnio;
+};
 
 export const filtrarCasa = (data, casa) => {
   const filtradorCasa = data.filter((element) => (element.house === casa));
