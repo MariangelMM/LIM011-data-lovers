@@ -118,7 +118,7 @@ describe('ordenadorAnioDesc', () => {
   it('debería ser una función', () => {
     expect(typeof ordenadorAnioDesc).toBe('function');
   });
-  it('debería ordenar ascendentemente de menor a mayor', () => {
+  it('debería ordenar decendentemente de mayor a menor', () => 
     expect(ordenadorAnioDesc(potterPrueba, 'ordenar-desc')[0].yearOfBirth).toEqual(1930);
   });
 });
