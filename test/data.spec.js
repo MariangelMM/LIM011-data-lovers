@@ -1,4 +1,6 @@
-import { ordenadorAZ, dataPotter } from '../src/data';
+/* eslint-disable import/no-duplicates */
+import { dataPotter, ordenadorAZ, ordenadorAnio } from '../src/data';
+
 
 const potterPrueba = [{
   name: 'Harry Potter',
@@ -88,6 +90,50 @@ const potterPrueba = [{
   alive: false,
   image: 'http://hp-api.herokuapp.com/images/crabbe.jpg',
 },
+{
+  name: 'Ginny Weasley',
+  species: 'human',
+  gender: 'female',
+  house: 'Gryffindor',
+  dateOfBirth: '11-08-1981',
+  yearOfBirth: 1981,
+  ancestry: 'pure-blood',
+  eyeColour: 'brown',
+  hairColour: 'red',
+  wand: {
+    wood: 'yew',
+    core: '',
+    length: '',
+  },
+  patronus: 'horse',
+  hogwartsStudent: true,
+  hogwartsStaff: false,
+  actor: 'Bonnie Wright',
+  alive: true,
+  image: 'http://hp-api.herokuapp.com/images/ginny.jpg',
+},
+{
+  name: 'Cho Chang',
+  species: 'human',
+  gender: 'female',
+  house: 'Ravenclaw',
+  dateOfBirth: '',
+  yearOfBirth: '',
+  ancestry: '',
+  eyeColour: 'brown',
+  hairColour: 'black',
+  wand: {
+    wood: '',
+    core: '',
+    length: '',
+  },
+  patronus: 'swan',
+  hogwartsStudent: true,
+  hogwartsStaff: false,
+  actor: 'Katie Leung',
+  alive: true,
+  image: 'http://hp-api.herokuapp.com/images/cho.jpg',
+},
 ];
 
 describe(dataPotter, () => {
@@ -107,6 +153,18 @@ describe('ordenadorAZ', () => {
     expect(ordenadorAZ(potterPrueba, 'ordenar-az')[0].name).toEqual('Argus Filch');
   });
   it('debería ordenar alfabéticamente de Z-A', () => {
-    expect(ordenadorAZ(potterPrueba, 'ordenar-za')[0].name).toEqual('Vincent Crabbe');
+    expect(ordenadorAZ(potterPrueba, 'ordenar-za')[0].name.reverse).toEqual('');
+  });
+});
+
+describe('ordenadorAnio', () => {
+  it('debería ser una función', () => {
+    expect(typeof ordenadorAnio).toBe('function');
+  });
+  it('debería ordenar de manera ascendente', () => {
+    expect(ordenadorAnio(potterPrueba, 'ordenar-asc')[0].yearOfBirth).toEqual(1981);
+  });
+  it('debería ordenar de manera descendente', () => {
+    expect(ordenadorAnio(potterPrueba, 'ordenar-desc')[0].yearOfBirth.reverse).toEqual();
   });
 });

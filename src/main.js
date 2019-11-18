@@ -74,15 +74,15 @@ ordenar.addEventListener('change', () => {
 
 export const ordenarAnio = document.getElementById('ordenaranio');
 ordenarAnio.addEventListener('change', () => {
-  const ordenadorAsc = ordenarAnio.value;
+  const ordenadoryear = ordenarAnio.value;
   let ordenadorPotterAnio = [];
-  if (ordenadorAsc === 'ordenar-asc') {
-    ordenadorPotterAnio = ordenadorAnio(allPotter, ordenadorAsc);
+  if (ordenadoryear === 'ordenar-asc') {
+    ordenadorPotterAnio = ordenadorAnio(allPotter, ordenadoryear);
     contenedorPotter.innerHTML = mostrarData(ordenadorPotterAnio);
-  } else if (ordenadorAsc === 'ordenar-desc') {
-    ordenadorPotterAnio = ordenadorAnio(allPotter, ordenadorAsc).reverse();
+  } else if (ordenadoryear === 'ordenar-desc') {
+    ordenadorPotterAnio = ordenadorAnio(allPotter, ordenadoryear).reverse();
     contenedorPotter.innerHTML = mostrarData(ordenadorPotterAnio);
-  } else if (ordenadorAsc === 'all') {
+  } else if (ordenadoryear === 'all') {
     contenedorPotter.innerHTML = mostrarData(allPotter);
   }
 });
