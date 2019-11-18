@@ -27,26 +27,26 @@ empezar.addEventListener('click', () => {
 const allPotter = dataPotter(POTTER);
 const contenedorPotter = document.getElementById('contenedor-potter');
 
-export const mostrarData = (potter) => { // parámetro
+export const mostrarData = (data) => { // parámetro
   let muestra = ' ';
-  for (let i = 0; i < potter.length; i += 1) {
+  for (let i = 0; i < data.length; i += 1) {
     const llamar = `
     <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img class="img-potter" src= "${potter[i].image}"/>
-              <h2> ${potter[i].name}</h2>
-              <h2> ${potter[i].house}</h2>
+              <img class="img-potter" src= "${data[i].image}"/>
+              <h2> ${data[i].name}</h2>
+              <h2> ${data[i].house}</h2>
             </div>
   
             <div class="flip-card-back">
-                <h2>${potter[i].name}</h2>
-                <h4 class="caracteristicas">Casa: ${potter[i].house}</h4>
-                <h4 class="caracteristicas">Genero: ${potter[i].gender}</h4>
-                <h4 class="caracteristicas">Año: ${potter[i].yearOfBirth}</h4>
-                <h4 class="caracteristicas">Patronus: ${potter[i].patronus}</h4>
-                <h4 class="caracteristicas">Especie: ${potter[i].species}</h4>
-                <h4 class="caracteristicas">Actor: ${potter[i].actor}</h4>
+                <h2>${data[i].name}</h2>
+                <h4 class="caracteristicas">Casa: ${data[i].house}</h4>
+                <h4 class="caracteristicas">Genero: ${data[i].gender}</h4>
+                <h4 class="caracteristicas">Año: ${data[i].yearOfBirth}</h4>
+                <h4 class="caracteristicas">Patronus: ${data[i].patronus}</h4>
+                <h4 class="caracteristicas">Especie: ${data[i].species}</h4>
+                <h4 class="caracteristicas">Actor: ${data[i].actor}</h4>
                 <img class="escudo" src="./imagenes/hogwarts.png" />        
               </div>
             </div>

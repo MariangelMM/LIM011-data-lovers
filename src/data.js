@@ -19,18 +19,18 @@ export const dataPotter = (data) => {
 };
 
 
-export const ordenadorAZ = (data) => {
-  const arrayNombre = data.slice().sort((aa, bb) => (aa.name > bb.name ? 1 : -1));
+export const ordenadorAZ = (nombres) => {
+  const arrayNombre = nombres.slice().sort((aa, bb) => (aa.name > bb.name ? 1 : -1));
   return arrayNombre;
 };
 
-export const ordenadorAnioAsc = (data) => {
-  const arraAnio = data.slice().sort((aa, bb) => (bb.yearOfBirth - aa.yearOfBirth));
+export const ordenadorAnioAsc = (fecha) => {
+  const arraAnio = fecha.slice().sort((aa, bb) => (bb.yearOfBirth - aa.yearOfBirth));
   return arraAnio;
 };
 
-export const ordenadorAnioDesc = (data) => {
-  const arraAnio = data.slice().sort((aa, bb) => (aa.yearOfBirth - bb.yearOfBirth));
+export const ordenadorAnioDesc = (fecha) => {
+  const arraAnio = fecha.slice().sort((aa, bb) => (aa.yearOfBirth - bb.yearOfBirth));
   return arraAnio;
 };
 
