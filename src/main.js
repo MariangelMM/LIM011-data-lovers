@@ -1,6 +1,7 @@
 import POTTER from './data/potter/potter.js';
 import {
-  dataPotter, ordenadorAZ, ordenadorAnio, filtrarCasa, filtrarGenero, filtrarRol, filtrarVaritas,
+  dataPotter, ordenadorAZ, ordenadorAnioAsc, ordenadorAnioDesc,
+  filtrarCasa, filtrarGenero, filtrarRol, filtrarVaritas,
 } from './data.js';
 
 // Declarando variable para evento
@@ -42,6 +43,7 @@ export const mostrarData = (potter) => { // parámetro
                 <h2>${potter[i].name}</h2>
                 <h4 class="caracteristicas">Casa: ${potter[i].house}</h4>
                 <h4 class="caracteristicas">Genero: ${potter[i].gender}</h4>
+                <h4 class="caracteristicas">Año: ${potter[i].yearOfBirth}</h4>
                 <h4 class="caracteristicas">Patronus: ${potter[i].patronus}</h4>
                 <h4 class="caracteristicas">Especie: ${potter[i].species}</h4>
                 <h4 class="caracteristicas">Actor: ${potter[i].actor}</h4>
@@ -74,15 +76,16 @@ ordenar.addEventListener('change', () => {
 
 export const ordenarAnio = document.getElementById('ordenaranio');
 ordenarAnio.addEventListener('change', () => {
-  const ordenadoryear = ordenarAnio.value;
+  const ordenadorAsc = ordenarAnio.value;
+  const ordenadorDesc = ordenarAnio.value;
   let ordenadorPotterAnio = [];
-  if (ordenadoryear === 'ordenar-asc') {
-    ordenadorPotterAnio = ordenadorAnio(allPotter, ordenadoryear);
+  if (ordenadorAsc === 'ordenar-asc') {
+    ordenadorPotterAnio = ordenadorAnioAsc(allPotter, ordenadorAsc);
     contenedorPotter.innerHTML = mostrarData(ordenadorPotterAnio);
-  } else if (ordenadoryear === 'ordenar-desc') {
-    ordenadorPotterAnio = ordenadorAnio(allPotter, ordenadoryear).reverse();
+  } else if (ordenadorDesc === 'ordenar-desc') {
+    ordenadorPotterAnio = ordenadorAnioDesc(allPotter, ordenadorDesc);
     contenedorPotter.innerHTML = mostrarData(ordenadorPotterAnio);
-  } else if (ordenadoryear === 'all') {
+  } else if (ordenadorAsc === 'all') {
     contenedorPotter.innerHTML = mostrarData(allPotter);
   }
 });
