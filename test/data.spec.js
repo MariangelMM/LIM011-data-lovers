@@ -1,4 +1,4 @@
-import { ordenadorAZ, ordenadorAnio } from '../src/data';
+import { ordenadorAZ, ordenadorAnioAsc } from '../src/data';
 
 const potterPrueba = [
   {
@@ -99,13 +99,17 @@ describe('ordenadorAZ', () => {
   it('debería ordenar alfabéticamente de A-Z', () => {
     expect(ordenadorAZ(potterPrueba, 'ordenar-az')[0].name).toEqual('Argus Filch');
   });
+  it('debería ordenar alfabéticamente de Z-A', () => {
+    expect(ordenadorAZ(potterPrueba, 'ordenar-za')[0].name.reverse).toEqual();
+  });
 });
 
-describe('ordenadorAnio', () => {
+
+describe('ordenadorAnioAsc', () => {
   it('debería ser una función', () => {
-    expect(typeof ordenadorAZ).toBe('function');
+    expect(typeof ordenadorAnioAsc).toBe('function');
   });
   it('debería ordenar ascendentemente de menor a mayor', () => {
-    expect(ordenadorAnio(potterPrueba, 'ordenar-asc')[0].yearOfBirth).toEqual(1980);
+    expect(ordenadorAnioAsc(potterPrueba, 'ordenar-asc')[0].yearOfBirth).toEqual(1980);
   });
 });
