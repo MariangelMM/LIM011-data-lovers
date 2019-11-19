@@ -1,13 +1,13 @@
+const dataNueva = [];
 export const dataPotter = (data) => {
-  const dataNueva = [];
   data.forEach((element) => {
     dataNueva.push({
       image: element.image,
       species: element.species,
       name: element.name,
-      house: element.house ? element.house : 'Sin casa',
+      house: element.house,
       gender: element.gender,
-      patronus: element.patronus ? element.patronus : 'Sin patronus',
+      patronus: element.patronus,
       actor: element.actor,
       hogwartsStaff: element.hogwartsStaff,
       hogwartsStudent: element.hogwartsStudent,
@@ -19,18 +19,18 @@ export const dataPotter = (data) => {
 };
 
 
-export const ordenadorAZ = (nombres) => {
-  const arrayNombre = nombres.slice().sort((aa, bb) => (aa.name > bb.name ? 1 : -1));
+export const ordenadorAZ = (data) => {
+  const arrayNombre = data.slice().sort((aa, bb) => (aa.name > bb.name ? 1 : -1));
   return arrayNombre;
 };
 
-export const ordenadorAnioAsc = (fecha) => {
-  const arraAnio = fecha.slice().sort((aa, bb) => (bb.yearOfBirth - aa.yearOfBirth));
+export const ordenadorAnioAsc = (data) => {
+  const arraAnio = data.slice().sort((aa, bb) => (bb.yearOfBirth - aa.yearOfBirth));
   return arraAnio;
 };
 
-export const ordenadorAnioDesc = (fecha) => {
-  const arraAnio = fecha.slice().sort((aa, bb) => (aa.yearOfBirth - bb.yearOfBirth));
+export const ordenadorAnioDesc = (data) => {
+  const arraAnio = data.slice().sort((aa, bb) => (aa.yearOfBirth - bb.yearOfBirth));
   return arraAnio;
 };
 

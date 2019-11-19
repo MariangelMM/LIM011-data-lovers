@@ -28,25 +28,25 @@ const allPotter = dataPotter(POTTER);
 const contenedorPotter = document.getElementById('contenedor-potter');
 
 export const mostrarData = (data) => { // parámetro
-  let muestra = ' ';
-  for (let i = 0; i < data.length; i += 1) {
+  let muestra = [];
+  data.forEach((element) => {
     const llamar = `
     <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img class="img-potter" src= "${data[i].image}"/>
-              <h2> ${data[i].name}</h2>
-              <h2> ${data[i].house}</h2>
+              <img class="img-potter" src= "${element.image}"/>
+              <h2> ${element.name}</h2>
+              <h2> ${element.house}</h2>
             </div>
   
             <div class="flip-card-back">
-                <h2>${data[i].name}</h2>
-                <h4 class="caracteristicas">Casa: ${data[i].house}</h4>
-                <h4 class="caracteristicas">Genero: ${data[i].gender}</h4>
-                <h4 class="caracteristicas">Año: ${data[i].yearOfBirth}</h4>
-                <h4 class="caracteristicas">Patronus: ${data[i].patronus}</h4>
-                <h4 class="caracteristicas">Especie: ${data[i].species}</h4>
-                <h4 class="caracteristicas">Actor: ${data[i].actor}</h4>
+                <h2>${element.name}</h2>
+                <h4 class="caracteristicas">Casa: ${element.house}</h4>
+                <h4 class="caracteristicas">Genero: ${element.gender}</h4>
+                <h4 class="caracteristicas">Año: ${element.yearOfBirth}</h4>
+                <h4 class="caracteristicas">Patronus: ${element.patronus}</h4>
+                <h4 class="caracteristicas">Especie: ${element.species}</h4>
+                <h4 class="caracteristicas">Actor: ${element.actor}</h4>
                 <img class="escudo" src="./imagenes/hogwarts.png" />        
               </div>
             </div>
@@ -54,10 +54,11 @@ export const mostrarData = (data) => { // parámetro
         </div>
       `;
     muestra += llamar;
-  }
+  });
   return muestra;
 };
 contenedorPotter.innerHTML = mostrarData(allPotter);
+
 
 export const ordenar = document.getElementById('ordenar');
 ordenar.addEventListener('change', () => {
