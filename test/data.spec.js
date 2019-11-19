@@ -1,5 +1,5 @@
 import {
-  ordenadorAZ, ordenadorAnioAsc, ordenadorAnioDesc,
+  dataPotter, ordenadorAZ, ordenadorAnioAsc, ordenadorAnioDesc,
   filtrarCasa, filtrarGenero, filtrarRol, filtrarVaritas,
 } from '../src/data';
 
@@ -9,11 +9,7 @@ const potterPrueba = [
     species: 'human',
     gender: 'male',
     house: 'Gryffindor',
-    dateOfBirth: '31-07-1980',
     yearOfBirth: 1980,
-    ancestry: 'half-blood',
-    eyeColour: 'green',
-    hairColour: 'black',
     wand: {
       wood: 'holly',
       core: 'phoenix feather',
@@ -23,7 +19,6 @@ const potterPrueba = [
     hogwartsStudent: true,
     hogwartsStaff: false,
     actor: 'Daniel Radcliffe',
-    alive: true,
     image: 'http://hp-api.herokuapp.com/images/harry.jpg',
   },
   {
@@ -31,11 +26,7 @@ const potterPrueba = [
     species: 'human',
     gender: 'female',
     house: 'Gryffindor',
-    dateOfBirth: '19-09-1979',
     yearOfBirth: 1979,
-    ancestry: 'muggleborn',
-    eyeColour: 'brown',
-    hairColour: 'brown',
     wand: {
       wood: 'vine',
       core: 'dragon heartstring',
@@ -45,7 +36,6 @@ const potterPrueba = [
     hogwartsStudent: true,
     hogwartsStaff: false,
     actor: 'Emma Watson',
-    alive: true,
     image: 'http://hp-api.herokuapp.com/images/hermione.jpeg',
   },
   {
@@ -53,11 +43,7 @@ const potterPrueba = [
     species: 'human',
     gender: 'male',
     house: '',
-    dateOfBirth: '',
     yearOfBirth: 1930,
-    ancestry: 'squib',
-    eyeColour: '',
-    hairColour: 'grey',
     wand: {
       wood: '',
       core: '',
@@ -67,7 +53,6 @@ const potterPrueba = [
     hogwartsStudent: false,
     hogwartsStaff: true,
     actor: 'David Bradley',
-    alive: true,
     image: 'http://hp-api.herokuapp.com/images/filch.jpg',
   },
   {
@@ -75,11 +60,7 @@ const potterPrueba = [
     species: 'human',
     gender: 'male',
     house: 'Slytherin',
-    dateOfBirth: '',
     yearOfBirth: 1978,
-    ancestry: 'pure-blood',
-    eyeColour: 'black',
-    hairColour: 'black',
     wand: {
       wood: '',
       core: '',
@@ -89,11 +70,21 @@ const potterPrueba = [
     hogwartsStudent: true,
     hogwartsStaff: false,
     actor: 'Jamie Waylett',
-    alive: false,
     image: 'http://hp-api.herokuapp.com/images/crabbe.jpg',
   },
 ];
 
+const dataNueva = potterPrueba;
+
+
+describe('dataPotter', () => {
+  it('debería ser una función', () => {
+    expect(typeof dataPotter).toBe('function');
+  });
+  it('debería mostrar data personajes', () => {
+    expect(dataPotter(potterPrueba)).toEqual(dataNueva);
+  });
+});
 
 describe('ordenadorAZ', () => {
   it('debería ser una función', () => {
