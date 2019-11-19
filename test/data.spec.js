@@ -1,4 +1,7 @@
-import { ordenadorAZ, ordenadorAnioAsc, ordenadorAnioDesc } from '../src/data';
+import {
+  ordenadorAZ, ordenadorAnioAsc, ordenadorAnioDesc,
+  filtrarCasa, filtrarGenero, filtrarRol, filtrarVaritas,
+} from '../src/data';
 
 const potterPrueba = [
   {
@@ -118,7 +121,44 @@ describe('ordenadorAnioDesc', () => {
   it('debería ser una función', () => {
     expect(typeof ordenadorAnioDesc).toBe('function');
   });
-  it('debería ordenar decendentemente de mayor a menor', () => 
+  it('debería ordenar decendentemente de mayor a menor', () => {
     expect(ordenadorAnioDesc(potterPrueba, 'ordenar-desc')[0].yearOfBirth).toEqual(1930);
+  });
+});
+
+
+describe('filtrarCasa', () => {
+  it('debería ser una función', () => {
+    expect(typeof filtrarCasa).toBe('function');
+  });
+  it('debería filtrar por casa', () => {
+    expect(filtrarCasa(potterPrueba, 'Slytherin')[0].house).toEqual('Slytherin');
+  });
+});
+
+describe('filtrarGenero', () => {
+  it('debería ser una función', () => {
+    expect(typeof filtrarGenero).toBe('function');
+  });
+  it('debería filtrar por genero', () => {
+    expect(filtrarGenero(potterPrueba, 'female')[0].gender).toEqual('female');
+  });
+});
+
+describe('filtrarVaritas', () => {
+  it('debería ser una función', () => {
+    expect(typeof filtrarVaritas).toBe('function');
+  });
+  it('debería filtrar por varitas', () => {
+    expect(filtrarVaritas(potterPrueba, 'phoenix feather')[0].wand.core).toEqual('phoenix feather');
+  });
+});
+
+describe('filtrarRol', () => {
+  it('debería ser una función', () => {
+    expect(typeof filtrarRol).toBe('function');
+  });
+  it('debería filtrar por rol', () => {
+    expect(filtrarRol(potterPrueba, 'staff')[0].hogwartsStaff).toEqual(true);
   });
 });
