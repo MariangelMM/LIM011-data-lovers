@@ -119,7 +119,7 @@ button{
   border: 5px solid #17141d;
   border: 5px solid #17141d;
   background-color: #000000;
-  margin: 0 0 20px 0;
+  margin: 20px;
 }
 
 .flip-card .flip-card-front .img-potter{
@@ -168,8 +168,8 @@ button{
 }
 
 .escudo {
-  width: 55%;
-  margin: 8px auto;
+  width: 44%;
+  margin: 3px auto;
 }
 .caracteristicas {
   margin: 5px;
