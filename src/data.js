@@ -2,17 +2,17 @@ const dataNueva = [];
 export const dataPotter = (data) => {
   data.forEach((element) => {
     dataNueva.push({
-      image: element.image,
-      species: element.species,
       name: element.name,
-      house: element.house,
+      species: element.species,
       gender: element.gender,
-      patronus: element.patronus,
-      actor: element.actor,
-      hogwartsStaff: element.hogwartsStaff,
-      hogwartsStudent: element.hogwartsStudent,
+      house: element.house,
       yearOfBirth: element.yearOfBirth ? element.yearOfBirth : 'Sin Año',
       wand: element.wand,
+      patronus: element.patronus,
+      hogwartsStaff: element.hogwartsStaff,
+      hogwartsStudent: element.hogwartsStudent,
+      actor: element.actor,
+      image: element.image,
     });
   });
   return dataNueva;
