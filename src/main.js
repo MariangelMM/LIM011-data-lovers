@@ -5,41 +5,41 @@ import {
 } from './data.js';
 
 // Declarando variable para evento
-const entrar = document.getElementById('entrar');
-const empezar = document.getElementById('empezar');
+const btnEntrar = document.getElementById('entrar');
+const btnEmpezar = document.getElementById('empezar');
 // Declarando variable para mostrar y ocultar vista
 const primeraVista = document.getElementById('primera_vista');
 const segundaVista = document.getElementById('segunda_vista');
 const terceraVista = document.getElementById('tercera_vista');
 // Dando funcionalidad al botón entrar
-entrar.addEventListener('click', () => {
+btnEntrar.addEventListener('click', () => {
   const nombre = document.getElementById('name');
   document.getElementById('mensaje_bienvenido').innerHTML = ` Hola ${nombre.value} bienvenido al mundo de Harry Potter aqui encontraras una lista con los personajes de la saga y podras acceder a sus caracteristicas para que puedas conocerlos aun mas.`;
   segundaVista.classList.remove('ocultar');
   primeraVista.classList.add('ocultar');
 });
 // Dando funcionalidad al botón empezar
-empezar.addEventListener('click', () => {
+btnEmpezar.addEventListener('click', () => {
   terceraVista.classList.remove('ocultar');
   segundaVista.classList.add('ocultar');
 });
 
 const allPotter = dataPotter(POTTER);
-const contenedorPotter = document.getElementById('contenedor-potter');
+const contenedorPotter = document.getElementById('contenedor_potter');
 
 export const mostrarData = (data) => { // parámetro
-  let muestra = [];
+  let muestra = '';
   data.forEach((element) => {
-    const llamar = `
-    <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img class="img-potter" src= "${element.image}"/>
+    const template = `
+    <div class="flip_card">
+          <div class="flip_card_inner">
+            <div class="flip_card_front">
+              <img class="img_potter" src= "${element.image}"/>
               <h2> ${element.name}</h2>
               <h2> ${element.house}</h2>
             </div>
   
-            <div class="flip-card-back">
+            <div class="flip_card_back">
                 <h2>${element.name}</h2>
                 <h4 class="caracteristicas">Casa: ${element.house}</h4>
                 <h4 class="caracteristicas">Genero: ${element.gender}</h4>
@@ -53,7 +53,7 @@ export const mostrarData = (data) => { // parámetro
           </div>
         </div>
       `;
-    muestra += llamar;
+    muestra += template;
   });
   return muestra;
 };

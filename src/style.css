@@ -2,7 +2,7 @@ body{
   padding:0;
   margin:0;
 }
-.primerfondo{
+.primer_fondo{
   text-align: center;
   position: fixed;
   width: 100%;
@@ -12,7 +12,7 @@ body{
   overflow: hidden;
 }
 
-.segundofondo{
+.segundo_fondo{
   text-align: center;
   position: fixed;
   width: 100%;
@@ -22,7 +22,7 @@ body{
   overflow-y: scroll;
 }
 
-.letrasPersonajes{
+.letras_personajes{
   font-family: 'Lucida Bright';
   font-size: 15px;
   color: #ffffff;
@@ -63,7 +63,7 @@ button{
   font-style: normal;
 }
 
-.letras-home{
+.letras_home{
   font-family: 'Lucida Bright';
   font-size: 34px;
   color: #ffffff;
@@ -112,7 +112,7 @@ button{
 }
 
 /*MENU POTTER*/
-.flip-card {
+.flip_card {
   width: 240px;
   height: 400px;
   perspective: 1000px;
@@ -127,13 +127,13 @@ button{
   margin: 20px;
 }
 
-.flip-card .flip-card-front .img-potter{
+.flip_card .flip_card_front .img_potter{
   width: 180px;
   height: 250px;
 } 
 
 /*Este contenedor es necesario para colocar la parte delantera y trasera. */
-.flip-card-inner {
+.flip_card_inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -143,12 +143,12 @@ button{
 }
 
 /* Realice un giro horizontal cuando mueva el mouse sobre el contenedor del contenedor*/
-.flip-card:hover .flip-card-inner {
+.flip_card:hover .flip_card_inner {
   transform: rotateY(180deg);
 }
 
 /* Posiciona la parte delantera y trasera. */
-.flip-card-front, .flip-card-back {
+.flip_card_front, .flip_card_back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -157,7 +157,7 @@ button{
 }
 
 /* Estilo de la parte posterior*/
-.flip-card-back {
+.flip_card_back {
   background-color: #000000;
   color:  #000000;
   transform: rotateY(180deg);
@@ -182,7 +182,7 @@ button{
 }
 /************* Mobile **************/
 @media only screen and (max-width: 450px) {
-  .titulo-home{
+  .titulo_home{
     width: 100%;
   }
   .titulo{

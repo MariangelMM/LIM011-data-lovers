@@ -10,63 +10,66 @@
 </head>
 
 <body>
-  
-  <section id="primera_vista" class="primerfondo">
-    <div id="pantalla_inicio" class="letras-home">
-      <figure><img class="titulo-home" alt="Universo Potter" src="./imagenes/universo potter transparente.png"></figure>
+  <section id="primera_vista" class="primer_fondo">
+    <div id="pantalla_inicio" class="letras_home">
+      <figure><img class="titulo_home" alt="Universo Potter" src="./imagenes/universo potter transparente.png"></figure>
       <p>Ingresa tu nombre o nick </p>
       <p><input type="text" id="name" value=""></p>
       <button type="button" id="entrar">Entrar</button>
     </div>
   </section>
 
-  <section id="segunda_vista" class="segundofondo ocultar">
+  <section id="segunda_vista" class="segundo_fondo ocultar">
     <div id="pantalla_segunda" class="letras">
       <p id="mensaje_bienvenido" class="texto_izquierda"> </p>
       <button type="button" id="empezar">Empezar</button>
     </div>
   </section>
 
-  <section id="tercera_vista" class="segundofondo ocultar">
+
+  <section id="tercera_vista" class="segundo_fondo ocultar">
     <div id="pantalla_tercera" class="contenedor_interno">
-        <figure><img class="titulo" alt="Universo Potter" src="./imagenes/potter.png"></figure>
-      <select class="seleccion" id="ordenar">
-        <option value="all">Alfabeto</option>
-        <option value="ordenar-az">Alfabeto: De A-Z</option>
-        <option value="ordenar-za">Alfabeto: De Z-A</option>
-      </select>
-      <select class="seleccion" id="ordenaranio">
-        <option value="all">Año</option>
-        <option value="ordenar-asc">Ascendente</option>
-        <option value="ordenar-desc">Descendente</option>
-      </select>
-      <select class="seleccion" id="casa">
-        <option value="all">Casas</option>
-        <option value="Slytherin">Slytherin</option>
-        <option value="Gryffindor">Gryffindor</option>
-        <option value="Ravenclaw">Ravenclaw</option>
-        <option value="Hufflepuff">Hufflepuff</option>
-      </select>
-      <select class="seleccion" id="genero">
-        <option value="all">Genero</option>
-        <option value="male">Masculino</option>
-        <option value="female">Femenino</option>
-      </select>
-      <select class="seleccion" id="rol">
-        <option value="all">Rol</option>
-        <option value="student">Estudiante</option>
-        <option value="staff">Profesor</option>
-      </select>
-      <select class="seleccion" id="varitas">
-        <option value="all">Varitas</option>
-        <option value="phoenix feather">Phoenix Feather</option>
-        <option value="dragon heartstring">Dragon Heartstring</option>
-        <option value="unicorn tail-hair">Unicorn Tail Hair</option>
-        <option value="unicorn hair">Unicorn Hair</option>
-      </select>
-      <div id="contenedor-potter" class="personajes letrasPersonajes"></div>
+      <figure><img class="titulo" alt="Universo Potter" src="./imagenes/potter.png"></figure>
+      <nav>
+        <select class="seleccion" id="ordenar">
+          <option value="all">Alfabeto</option>
+          <option value="ordenar-az">Alfabeto: De A-Z</option>
+          <option value="ordenar-za">Alfabeto: De Z-A</option>
+        </select>
+        <select class="seleccion" id="ordenaranio">
+          <option value="all">Año</option>
+          <option value="ordenar-asc">Ascendente</option>
+          <option value="ordenar-desc">Descendente</option>
+        </select>
+        <select class="seleccion" id="casa">
+          <option value="all">Casas</option>
+          <option value="Slytherin">Slytherin</option>
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+        </select>
+        <select class="seleccion" id="genero">
+          <option value="all">Genero</option>
+          <option value="male">Masculino</option>
+          <option value="female">Femenino</option>
+        </select>
+        <select class="seleccion" id="rol">
+          <option value="all">Rol</option>
+          <option value="student">Estudiante</option>
+          <option value="staff">Profesor</option>
+        </select>
+        <select class="seleccion" id="varitas">
+          <option value="all">Varitas</option>
+          <option value="phoenix feather">Phoenix Feather</option>
+          <option value="dragon heartstring">Dragon Heartstring</option>
+          <option value="unicorn tail-hair">Unicorn Tail Hair</option>
+          <option value="unicorn hair">Unicorn Hair</option>
+        </select>
+      </nav>
+      <main id="contenedor_potter" class="personajes letras_personajes"></main>
     </div>
   </section>
-    <script type="module" src="main.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
+
 </html>
