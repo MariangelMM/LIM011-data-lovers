@@ -33,6 +33,11 @@ body{
   width: 70%;
 }
 
+.titulo{
+  width: 20%;
+}
+
+
 button{
   font-family: 'Lucida Bright';
   padding: 10px 20px;
@@ -179,6 +184,9 @@ button{
 @media only screen and (max-width: 450px) {
   .titulo-home{
     width: 100%;
+  }
+  .titulo{
+    width: 50%;
   }
   .letras{
     font-size: 22px;
