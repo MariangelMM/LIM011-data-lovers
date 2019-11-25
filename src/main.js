@@ -5,16 +5,16 @@ import {
 } from './data.js';
 
 // Declarando variable para evento
-const btnEntrar = document.getElementById('entrar');
-const btnEmpezar = document.getElementById('empezar');
+const btnEntrar = document.querySelector('#btn_entrar');
+const btnEmpezar = document.querySelector('#btn_empezar');
 // Declarando variable para mostrar y ocultar vista
-const primeraVista = document.getElementById('primera_vista');
-const segundaVista = document.getElementById('segunda_vista');
-const terceraVista = document.getElementById('tercera_vista');
+const primeraVista = document.querySelector('#primera_vista');
+const segundaVista = document.querySelector('#segunda_vista');
+const terceraVista = document.querySelector('#tercera_vista');
 // Dando funcionalidad al botón entrar
 btnEntrar.addEventListener('click', () => {
-  const nombre = document.getElementById('name');
-  document.getElementById('mensaje_bienvenido').innerHTML = ` Hola ${nombre.value} bienvenido al mundo de Harry Potter aqui encontraras una lista con los personajes de la saga y podras acceder a sus caracteristicas para que puedas conocerlos aun mas.`;
+  const nombre = document.querySelector('#name');
+  document.querySelector('#mensaje_bienvenido').innerHTML = ` Hola ${nombre.value} bienvenido al mundo de Harry Potter aqui encontraras una lista con los personajes de la saga y podras acceder a sus caracteristicas para que puedas conocerlos aun mas.`;
   segundaVista.classList.remove('ocultar');
   primeraVista.classList.add('ocultar');
 });
@@ -25,7 +25,7 @@ btnEmpezar.addEventListener('click', () => {
 });
 
 const allPotter = dataPotter(POTTER);
-const contenedorPotter = document.getElementById('contenedor_potter');
+const contenedorPotter = document.querySelector('#contenedor_potter');
 
 export const mostrarData = (data) => { // parámetro
   let muestra = '';
@@ -60,7 +60,7 @@ export const mostrarData = (data) => { // parámetro
 contenedorPotter.innerHTML = mostrarData(allPotter);
 
 
-export const ordenar = document.getElementById('ordenar');
+export const ordenar = document.querySelector('#ordenar');
 ordenar.addEventListener('change', () => {
   const ordenador = ordenar.value;
   let ordenadorPotter = [];
@@ -75,7 +75,7 @@ ordenar.addEventListener('change', () => {
   }
 });
 
-export const ordenarAnio = document.getElementById('ordenaranio');
+export const ordenarAnio = document.querySelector('#ordenaranio');
 ordenarAnio.addEventListener('change', () => {
   const ordenadorAsc = ordenarAnio.value;
   const ordenadorDesc = ordenarAnio.value;
@@ -92,7 +92,7 @@ ordenarAnio.addEventListener('change', () => {
 });
 
 
-export const casa = document.getElementById('casa');
+export const casa = document.querySelector('#casa');
 casa.addEventListener('change', () => {
   if (casa.value === 'all') {
     contenedorPotter.innerHTML = mostrarData(allPotter);
@@ -102,7 +102,7 @@ casa.addEventListener('change', () => {
   }
 });
 
-export const genero = document.getElementById('genero');
+export const genero = document.querySelector('#genero');
 genero.addEventListener('change', () => {
   if (genero.value === 'all') {
     contenedorPotter.innerHTML = mostrarData(allPotter);
@@ -112,7 +112,7 @@ genero.addEventListener('change', () => {
   }
 });
 
-export const rol = document.getElementById('rol');
+export const rol = document.querySelector('#rol');
 rol.addEventListener('change', () => {
   if (rol.value === 'all') {
     contenedorPotter.innerHTML = mostrarData(allPotter);
@@ -122,7 +122,7 @@ rol.addEventListener('change', () => {
   }
 });
 
-export const varitas = document.getElementById('varitas');
+export const varitas = document.querySelector('#varitas');
 varitas.addEventListener('change', () => {
   if (varitas.value === 'all') {
     contenedorPotter.innerHTML = mostrarData(allPotter);
